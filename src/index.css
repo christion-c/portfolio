@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+:root {
+  --color-bg: #fdf8f0;
+  --color-surface: #fbf1e2;
+  --color-surface-alt: #f3e2c7;
+  --color-text: #5c4433;
+  --color-text-strong: #2b1c12;
+  --color-border: #e7d3ae;
+
+  --color-primary: #c2410c;
+  --color-primary-light: #ea580c;
+  --color-secondary: #9f1239;
+  --color-gold: #b45309;
+
+  --shadow-color: 20 14% 20%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #180f09;
+    --color-surface: #241609;
+    --color-surface-alt: #2f1c0d;
+    --color-text: #d9bfa0;
+    --color-text-strong: #fbead4;
+    --color-border: #43290f;
+
+    --color-primary: #fb923c;
+    --color-primary-light: #fdba74;
+    --color-secondary: #fb7185;
+    --color-gold: #fbbf24;
+
+    --shadow-color: 20 60% 3%;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-alt: var(--color-surface-alt);
+  --color-text: var(--color-text);
+  --color-text-strong: var(--color-text-strong);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-secondary: var(--color-secondary);
+  --color-gold: var(--color-gold);
+  --color-accent: var(--color-primary);
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-in: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+* {
+  scrollbar-color: var(--color-primary) var(--color-surface);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 999px;
+  border: 2px solid var(--color-surface);
+}

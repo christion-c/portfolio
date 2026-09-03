@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found — Christion Callahan</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --color-bg: #fdf8f0;
+    --color-surface: #fbf1e2;
+    --color-text: #5c4433;
+    --color-text-strong: #2b1c12;
+    --color-border: #e7d3ae;
+    --color-primary: #c2410c;
+    --color-secondary: #9f1239;
+    --color-gold: #b45309;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #180f09;
+      --color-surface: #241609;
+      --color-text: #d9bfa0;
+      --color-text-strong: #fbead4;
+      --color-border: #43290f;
+      --color-primary: #fb923c;
+      --color-secondary: #fb7185;
+      --color-gold: #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', system-ui, sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .blob {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  .blob-1 {
+    top: -140px;
+    left: -120px;
+    width: 380px;
+    height: 380px;
+    background: linear-gradient(135deg, #c2410c, #9f1239, #b45309);
+  }
+  .blob-2 {
+    bottom: -160px;
+    right: -120px;
+    width: 420px;
+    height: 420px;
+    background: linear-gradient(135deg, #b45309, #ea580c, #9f1239);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+  }
+  .code {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    background: linear-gradient(135deg, var(--color-text-strong) 45%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-strong);
+    margin: 8px 0 12px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+  }
+  a.home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #c2410c, #9f1239);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -8px rgba(194, 65, 12, 0.5);
+  }
+</style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="content">
+    <p class="code">404</p>
+    <h1>This page took a wrong turn.</h1>
+    <p>The page you're looking for doesn't exist, or moved somewhere else. Let's get you back on track.</p>
+    <a class="home" href="/">Back to the homepage</a>
+  </div>
+</body>
+</html>

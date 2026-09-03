@@ -29,6 +29,7 @@ export interface Project {
   meta?: string;
   liveUrl?: string;
   sourceUrl?: string;
+  imageUrl?: string;
 }
 
 // One category card in the Skills section

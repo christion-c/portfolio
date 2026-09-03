@@ -7,7 +7,7 @@ export const aboutStory: AboutEntry[] = [
   },
   {
     label: 'The sideways move',
-    body: 'Professionally, I got here sideways. I started at QuikTrip as a store clerk in 2022, then took a one-year on-loan rotation to the corporate Service Center in 2025 — evenings first, then overnight, then onto the Facility Support team. That job taught me what school can’t: what it actually costs when software fails at 3 a.m. I run the filters that decide which incidents get escalated, and newer analysts bring me their judgment calls.',
+    body: 'Professionally, I got here sideways. I started at QuikTrip as a store clerk in 2022, then took a one-year on-loan rotation to the corporate Service Center in 2025 — evenings first, then overnight, then onto the SC4FS team. That job taught me what school can’t: what it actually costs when software fails at 3 a.m. I run the filters that decide which incidents get escalated, and newer analysts bring me their judgment calls.',
   },
   {
     label: 'What I’ve shipped',

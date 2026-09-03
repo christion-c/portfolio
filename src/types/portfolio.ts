@@ -35,6 +35,11 @@ export interface SkillGroup {
   emphasis?: boolean;
 }
 
+export interface AboutEntry {
+  label: string;
+  body: string;
+}
+
 export interface ExperienceEntry {
   org: string;
   title: string;

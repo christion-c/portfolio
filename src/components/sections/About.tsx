@@ -1,5 +1,5 @@
 import { FaGraduationCap, FaLocationDot } from 'react-icons/fa6';
-import { aboutParagraphs } from '../../data/about';
+import { aboutStory } from '../../data/about';
 import { education } from '../../data/education';
 import { profile } from '../../data/profile';
 import { Container } from '../ui/Container';
@@ -11,9 +11,18 @@ export function About() {
       <Container>
         <SectionHeading index="01" eyebrow="About" title="How I got here" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
-          <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-text">
-            {aboutParagraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
+          <div className="max-w-2xl space-y-8">
+            {aboutStory.map((beat) => (
+              <div key={beat.label} className="relative pl-6">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 top-1.5 h-3.5 w-1 rounded-full bg-gradient-to-b from-primary to-secondary"
+                />
+                <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                  {beat.label}
+                </p>
+                <p className="mt-2 text-lg leading-relaxed text-text">{beat.body}</p>
+              </div>
             ))}
           </div>
 

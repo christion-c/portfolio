@@ -17,15 +17,30 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         className="absolute inset-x-0 top-0 z-10 h-1 origin-left scale-x-0 rounded-t-2xl bg-gradient-to-r from-primary via-gold to-secondary transition-transform duration-300 group-hover:scale-x-100"
       />
 
-      {/* Live screenshot, when one has been captured for this project */}
-      {project.imageUrl && (
+      {/* Live screenshot(s), when captured for this project. A single (landscape web) shot fills
+          a full-bleed banner; two or more (e.g. portrait phone screens) sit side by side at their
+          natural aspect ratio so they aren't awkwardly cropped by a fixed video-style frame. */}
+      {project.imageUrls?.length === 1 && (
         <div className="aspect-video w-full overflow-hidden bg-surface-alt">
           <img
-            src={project.imageUrl}
+            src={project.imageUrls[0]}
             alt={`Screenshot of ${project.title}`}
             loading="lazy"
             className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
+        </div>
+      )}
+      {project.imageUrls && project.imageUrls.length > 1 && (
+        <div className="flex justify-center gap-4 overflow-x-auto bg-surface-alt p-6">
+          {project.imageUrls.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt={`Screenshot ${i + 1} of ${project.title}`}
+              loading="lazy"
+              className="h-[360px] w-auto shrink-0 rounded-2xl border border-border object-contain shadow-lg transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          ))}
         </div>
       )}
 

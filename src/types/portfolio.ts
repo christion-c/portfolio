@@ -29,7 +29,9 @@ export interface Project {
   meta?: string;
   liveUrl?: string;
   sourceUrl?: string;
-  imageUrl?: string;
+  // One image renders as a full-bleed banner (landscape web screenshots); two or more render
+  // side by side at their natural aspect ratio (e.g. portrait phone screenshots)
+  imageUrls?: string[];
 }
 
 // One category card in the Skills section

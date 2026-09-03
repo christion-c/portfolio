@@ -15,7 +15,7 @@ export const projects: Project[] = [
     meta: 'Atlas School capstone · presented on demonstration day',
     liveUrl: 'https://thinktwice.site',
     sourceUrl: 'https://github.com/christion-c',
-    imageUrl: '/projects/thinktwice.png',
+    imageUrls: ['/projects/ThinkTwiceHome.jpg', '/projects/ThinkTwiceFuel.jpg'],
   },
   {
     id: 'okcelticharp',
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     tags: ['React', 'TypeScript'],
     meta: 'Live and in production',
     liveUrl: 'https://okcelticharp.org',
-    imageUrl: '/projects/okcelticharp.png',
+    imageUrls: ['/projects/okcelticharp.png'],
   },
   {
     id: 'cafe-pos',

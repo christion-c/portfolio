@@ -3,7 +3,7 @@ import type { AboutEntry } from '../types/portfolio';
 export const aboutStory: AboutEntry[] = [
   {
     label: 'The long way in',
-    body: "I came to software from both directions. Academically: Pre-Engineering at Tulsa Tech's STEM Academy while I was still in high school, then Computer Engineering at Oral Roberts, then Computer Science at Tulsa Community College. Then Atlas School, for the other half — TypeScript and React on the front, Node and Express over PostgreSQL on the back, Docker and AWS underneath. The fundamentals came first, in C, C++, and C#, which is why I know what the abstractions are hiding.",
+    body: "My path into software started in high school, in the Pre-Engineering track at Tulsa Tech's STEM Academy. From there it carried me through Computer Engineering at Oral Roberts University and into Computer Science coursework at Tulsa Community College — years built on C, C++, and C#, which is why I still know what today's frameworks are hiding underneath. Atlas School is where the practical half caught up with the theory: TypeScript and React on the front end, Node and Express over PostgreSQL on the back, Docker and AWS underneath.",
   },
   {
     label: 'The sideways move',

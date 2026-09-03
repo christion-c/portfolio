@@ -12,11 +12,10 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
-      <Container className="flex items-center justify-between gap-4 py-4">
+      <Container className="flex items-start justify-between gap-4 py-4 sm:items-center">
         <a
           href="#top"
-          className="max-w-[12rem] truncate font-display text-sm italic text-text-strong transition-colors hover:text-primary sm:max-w-md sm:overflow-visible sm:whitespace-normal sm:text-base"
-          title={profile.verse}
+          className="max-w-[68%] font-display text-xs italic leading-snug text-text-strong transition-colors hover:text-primary sm:max-w-md sm:text-base sm:leading-normal"
         >
           {profile.verse}
         </a>
@@ -47,7 +46,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-strong transition-colors hover:border-primary hover:text-primary sm:hidden"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-text-strong transition-colors hover:border-primary hover:text-primary sm:hidden"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
         >

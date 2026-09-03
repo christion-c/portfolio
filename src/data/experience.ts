@@ -3,13 +3,13 @@ import type { ExperienceEntry } from '../types/portfolio';
 export const experience: ExperienceEntry[] = [
   {
     org: 'QuikTrip Corporation',
-    title: 'Service Center Analyst',
-    dates: 'October 2025 — present',
+    title: 'Service Center Analyst I (On-Loan)',
+    dates: 'October 2025 — October 2026',
     bullets: [
-      'Triage and route P0/P1 incidents affecting store systems on the overnight shift',
+      'One-year on-loan rotation from store operations to the corporate Service Center, concluding October 2026',
+      'Progressed from evening shift, to overnight shift, to the SC4FS (Facility Support) team after cross-training across all three analyst tracks — help desk, security, and facility support',
       'Own three monitoring filters covering critical incidents, food safety, and refrigeration',
       'Diagnose POS, network, payment terminal, and store hardware issues to keep stores operating',
-      'Cross-trained on all three analyst tracks — help desk, security, and facility support',
       'Serve as the peer escalation point for newer analysts on ticket categorization and severity',
     ],
   },

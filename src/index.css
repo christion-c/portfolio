@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 
+/* Light-theme color tokens (fall palette) — redefined for dark mode below */
 :root {
   --color-bg: #fdf8f0;
   --color-surface: #fbf1e2;
@@ -23,6 +24,7 @@
   --shadow-color: 20 14% 20%;
 }
 
+/* Dark-theme overrides for the same tokens; button-from/button-to are NOT redefined here on purpose */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #180f09;
@@ -42,6 +44,7 @@
   }
 }
 
+/* Registers the tokens above as real Tailwind utilities (bg-primary, text-text-strong, etc.) */
 @theme inline {
   --color-bg: var(--color-bg);
   --color-surface: var(--color-surface);
@@ -66,6 +69,7 @@
   --animate-in: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Gentle up/down drift used by GradientBlob's animate-float(-slow) utilities */
 @keyframes float {
   0%,
   100% {
@@ -76,6 +80,7 @@
   }
 }
 
+/* Entrance animation used by the animate-in utility (Hero, SectionHeading, etc.) */
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -87,11 +92,13 @@
   }
 }
 
+/* Smooth in-page anchor scrolling (nav links, skip link, back-to-top) */
 html {
   scroll-behavior: smooth;
   color-scheme: light dark;
 }
 
+/* Respect reduced-motion preference by disabling the smooth-scroll animation */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -107,16 +114,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Recolor the browser's text-selection highlight to match the theme */
 ::selection {
   background: var(--color-primary);
   color: var(--color-bg);
 }
 
+/* Firefox scrollbar theming */
 * {
   scrollbar-color: var(--color-primary) var(--color-surface);
   scrollbar-width: thin;
 }
 
+/* Chromium/WebKit scrollbar theming */
 ::-webkit-scrollbar {
   width: 10px;
 }

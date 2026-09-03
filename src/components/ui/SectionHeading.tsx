@@ -6,10 +6,13 @@ interface SectionHeadingProps {
   description?: string;
 }
 
+// Shared heading block (index number + eyebrow + title) used at the top of every content section.
+// headingId is set on the <h2> so the parent <section> can reference it via aria-labelledby.
 export function SectionHeading({ headingId, index, eyebrow, title, description }: SectionHeadingProps) {
   return (
     <div className="mb-12 max-w-2xl motion-safe:animate-in">
       <div className="mb-3 flex items-center gap-3">
+        {/* Decorative section number (e.g. "01") — hidden from screen readers, eyebrow/title already label the section */}
         <span aria-hidden="true" className="font-display text-sm text-primary">
           {index}
         </span>

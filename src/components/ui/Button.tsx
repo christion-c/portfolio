@@ -7,6 +7,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: ButtonVariant;
 }
 
+// primary uses fixed (non-theme-swapping) gradient stops so white text stays readable in dark mode too
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
     'bg-gradient-to-r from-button-from to-button-to text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 focus-visible:ring-primary-light',
@@ -14,6 +15,7 @@ const variantStyles: Record<ButtonVariant, string> = {
     'border border-border text-text-strong hover:border-primary hover:text-primary hover:-translate-y-0.5 focus-visible:ring-primary-light',
 };
 
+// Pill-shaped call-to-action link (renders as <a>, not <button> — every use is a navigation/action link)
 export function Button({
   children,
   variant = 'primary',

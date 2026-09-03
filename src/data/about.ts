@@ -1,5 +1,6 @@
 import type { AboutEntry } from '../types/portfolio';
 
+// Narrative beats rendered in order by the About section (src/components/sections/About.tsx)
 export const aboutStory: AboutEntry[] = [
   {
     label: 'The long way in',

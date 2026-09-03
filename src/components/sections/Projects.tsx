@@ -3,6 +3,7 @@ import { Container } from '../ui/Container';
 import { ProjectCard } from '../ui/ProjectCard';
 import { SectionHeading } from '../ui/SectionHeading';
 
+// Renders the case-study list; content lives in src/data/projects.ts
 export function Projects() {
   return (
     <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-20 py-24">

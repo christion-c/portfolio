@@ -1,5 +1,6 @@
 import type { Profile } from '../types/portfolio';
 
+// Site owner's core info, used across Hero, Navbar, Footer, and Contact
 export const profile: Profile = {
   name: 'Christion Callahan',
   role: 'Back-End & Platform Engineer',

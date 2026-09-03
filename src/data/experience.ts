@@ -1,5 +1,6 @@
 import type { ExperienceEntry } from '../types/portfolio';
 
+// Work history rendered as a timeline in the Experience section, most recent first
 export const experience: ExperienceEntry[] = [
   {
     org: 'QuikTrip Corporation',

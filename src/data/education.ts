@@ -1,5 +1,6 @@
 import type { EducationEntry } from '../types/portfolio';
 
+// Schools listed in the About section's Education card, most recent first
 export const education: EducationEntry[] = [
   {
     name: 'Atlas School — Tulsa, OK',

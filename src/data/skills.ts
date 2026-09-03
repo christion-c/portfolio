@@ -1,5 +1,6 @@
 import type { SkillGroup } from '../types/portfolio';
 
+// Category cards for the Skills section; emphasis:true gets the accent top-bar treatment
 export const skillGroups: SkillGroup[] = [
   {
     category: 'Back end & platform',

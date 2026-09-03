@@ -1,5 +1,6 @@
 import type { Project } from '../types/portfolio';
 
+// Case studies rendered by ProjectCard in the Projects section, in display order
 export const projects: Project[] = [
   {
     id: 'thinktwice',

@@ -5,17 +5,21 @@ import { profile } from '../../data/profile';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { Container } from '../ui/Container';
 
+// Shared focus-visible ring applied to every nav interactive element for consistent keyboard styling
 const focusRing =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 focus-visible:ring-offset-bg';
 
+// Sticky site header: verse/brand link, desktop nav, and a collapsible mobile nav
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  // Scrollspy: which section is active, drives the underline/highlight on nav links
   const sectionIds = navItems.map((item) => item.href.replace('#', ''));
   const activeId = useActiveSection(sectionIds);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <Container className="flex items-start justify-between gap-4 py-4 sm:items-center">
+        {/* Doubles as the brand mark and a link back to the top of the page */}
         <a
           href="#top"
           className={`max-w-[68%] rounded font-display text-xs italic leading-snug text-text-strong transition-colors hover:text-primary sm:max-w-md sm:text-base sm:leading-normal ${focusRing}`}
@@ -23,6 +27,7 @@ export function Navbar() {
           {profile.verse}
         </a>
 
+        {/* Desktop nav row, hidden below the sm breakpoint */}
         <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
           {navItems.map((item) => {
             const id = item.href.replace('#', '');
@@ -48,6 +53,7 @@ export function Navbar() {
           })}
         </nav>
 
+        {/* Hamburger toggle, only visible below the sm breakpoint */}
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
@@ -60,6 +66,8 @@ export function Navbar() {
         </button>
       </Container>
 
+      {/* Collapsible mobile nav: grid-rows animates the height; aria-hidden + tabIndex=-1 below
+          keep its links out of the accessibility tree and tab order while visually collapsed */}
       <nav
         id="mobile-nav"
         aria-label="Primary"

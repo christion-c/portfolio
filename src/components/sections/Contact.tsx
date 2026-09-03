@@ -4,6 +4,7 @@ import { Container } from '../ui/Container';
 import { GradientBlob } from '../ui/GradientBlob';
 import { SectionHeading } from '../ui/SectionHeading';
 
+// Closing CTA section: a gradient card with the two ways to get in touch
 export function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 py-24">
@@ -17,6 +18,7 @@ export function Contact() {
         />
 
         <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-10 sm:p-14">
+          {/* Decorative blob + gradient wash behind the CTA copy */}
           <GradientBlob className="-right-16 -top-16 h-56 w-56" variant="gold" />
           <div
             aria-hidden="true"

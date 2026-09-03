@@ -7,9 +7,11 @@ import { GradientBlob } from '../ui/GradientBlob';
 import { IconLink } from '../ui/IconLink';
 import { ProfilePhoto } from '../ui/ProfilePhoto';
 
+// Landing section: intro text + photo, CTA buttons, social links, and a scroll hint
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-24 scroll-mt-20">
+      {/* Decorative background: two floating gradient blobs plus a faint dot grid */}
       <GradientBlob className="-top-24 -left-24 h-72 w-72" variant="primary" />
       <GradientBlob className="-top-10 right-0 h-96 w-96" variant="gold" slow />
       <div
@@ -17,8 +19,10 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,var(--color-border)_1px,transparent_0)] bg-[length:24px_24px] opacity-40"
       />
 
+      {/* flex-col-reverse on mobile puts the photo above the text; lg:flex-row puts it beside the text */}
       <Container className="relative flex flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         <div className="flex flex-1 flex-col items-start">
+          {/* Availability badge with a pulsing dot */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary-strong motion-safe:animate-in">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-primary opacity-75" />
@@ -39,6 +43,7 @@ export function Hero() {
             {profile.tagline}
           </p>
 
+          {/* Primary calls to action */}
           <div className="mt-9 flex flex-wrap items-center gap-4 motion-safe:animate-in [animation-delay:260ms]">
             <Button href="#projects">View Projects</Button>
             <Button href="#contact" variant="secondary">
@@ -53,6 +58,7 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Photo is optional — only renders if profile.photoUrl is set */}
         {profile.photoUrl && (
           <ProfilePhoto
             src={profile.photoUrl}
@@ -62,6 +68,7 @@ export function Hero() {
         )}
       </Container>
 
+      {/* Scroll-down hint, hidden on mobile where vertical space is tighter */}
       <a
         href="#about"
         aria-label="Scroll to About section"

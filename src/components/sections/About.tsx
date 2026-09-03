@@ -5,12 +5,14 @@ import { profile } from '../../data/profile';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 
+// "How I got here" story beats plus a location/education sidebar card
 export function About() {
   return (
     <section id="about" aria-labelledby="about-heading" className="scroll-mt-20 py-24">
       <Container>
         <SectionHeading headingId="about-heading" index="01" eyebrow="About" title="How I got here" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
+          {/* Narrative: one labeled beat per aboutStory entry, each with a small accent tick mark */}
           <div className="max-w-2xl space-y-8">
             {aboutStory.map((beat) => (
               <div key={beat.label} className="relative pl-6">
@@ -26,6 +28,7 @@ export function About() {
             ))}
           </div>
 
+          {/* Sidebar card: location, then a compact education timeline */}
           <div className="flex h-fit flex-col gap-6">
             <div className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6">
               <div className="flex items-center gap-3 text-sm text-text">

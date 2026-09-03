@@ -3,6 +3,7 @@ import { experience } from '../../data/experience';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 
+// Work-history timeline; each role renders a marker dot plus a bullet list of responsibilities
 export function Experience() {
   return (
     <section id="experience" aria-labelledby="experience-heading" className="scroll-mt-20 bg-surface-alt/40 py-24">
@@ -14,9 +15,11 @@ export function Experience() {
           title="Production support, overnight"
         />
 
+        {/* border-l on the <ol> draws the vertical timeline line each role's marker sits on */}
         <ol className="relative space-y-10 border-l border-border pl-8">
           {experience.map((role) => (
             <li key={`${role.org}-${role.title}`} className="relative">
+              {/* Timeline marker dot, positioned to sit on the <ol>'s left border */}
               <span className="absolute -left-[38px] top-1 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-button-from to-button-to ring-4 ring-bg">
                 <FaBriefcase className="h-2 w-2 text-white" />
               </span>

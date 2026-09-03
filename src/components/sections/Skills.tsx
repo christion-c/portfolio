@@ -3,6 +3,7 @@ import { Badge } from '../ui/Badge';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 
+// Skill category cards; "emphasis" groups get an accent top-bar and stronger border
 export function Skills() {
   return (
     <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-20 bg-surface-alt/40 py-24">
@@ -18,6 +19,7 @@ export function Skills() {
                   : 'border-border bg-surface hover:border-primary/30'
               }`}
             >
+              {/* Accent bar shown only for emphasized (core) skill groups */}
               {group.emphasis && (
                 <span
                   aria-hidden="true"

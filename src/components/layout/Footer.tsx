@@ -4,11 +4,13 @@ import { socials } from '../../data/socials';
 import { Container } from '../ui/Container';
 import { IconLink } from '../ui/IconLink';
 
+// Page footer: copyright line, social icons, and a back-to-top link
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="relative border-t border-border">
+      {/* Thin decorative gradient line along the top edge */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
@@ -26,6 +28,7 @@ export function Footer() {
           {socials.map((link) => (
             <IconLink key={link.label} link={link} />
           ))}
+          {/* Jumps back to #top (the Hero section) */}
           <a
             href="#top"
             aria-label="Back to top"

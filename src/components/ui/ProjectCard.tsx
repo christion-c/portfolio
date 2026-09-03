@@ -7,14 +7,17 @@ interface ProjectCardProps {
   index: number;
 }
 
+// Single case-study card: title/meta, problem/solution copy, tags, and live/source links
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <article className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 sm:p-8">
+      {/* Gradient accent bar that reveals on hover */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 rounded-t-2xl bg-gradient-to-r from-primary via-gold to-secondary transition-transform duration-300 group-hover:scale-x-100"
       />
 
+      {/* Title row: name + optional meta pill on the left, decorative index number on the right */}
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -27,6 +30,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
           <p className="mt-1.5 font-display text-base italic text-text/80">{project.tagline}</p>
         </div>
+        {/* Purely decorative "01/02/03" — aria-hidden since the title already identifies the card */}
         <span
           aria-hidden="true"
           className="shrink-0 font-display text-3xl font-semibold text-primary/85 transition-colors duration-300 group-hover:text-primary"
@@ -37,6 +41,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-primary-strong">{project.role}</p>
 
+      {/* Problem/solution copy */}
       <div className="mt-4 space-y-3 text-sm leading-relaxed text-text">
         <p>
           <span className="font-semibold text-text-strong">The problem. </span>
@@ -48,12 +53,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </p>
       </div>
 
+      {/* Tech-stack tags */}
       <div className="mt-5 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <Badge key={tag}>{tag}</Badge>
         ))}
       </div>
 
+      {/* Live/source links — only rendered if the project has at least one */}
       {(project.liveUrl || project.sourceUrl) && (
         <div className="mt-6 flex gap-5 border-t border-border pt-5 text-sm font-medium">
           {project.liveUrl && (

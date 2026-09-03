@@ -4,9 +4,11 @@ interface ProfilePhotoProps {
   className?: string;
 }
 
+// Headshot with a soft gradient-glow frame; size is controlled by the caller via className
 export function ProfilePhoto({ src, alt, className = 'max-w-[220px]' }: ProfilePhotoProps) {
   return (
     <div className={`group relative mx-auto w-full sm:mx-0 ${className}`}>
+      {/* Blurred gradient glow sitting behind the photo, decorative only */}
       <div
         aria-hidden="true"
         className="absolute -inset-1.5 rounded-[1.25rem] bg-gradient-to-br from-primary via-gold to-secondary opacity-70 blur-md transition-opacity duration-300 group-hover:opacity-100"

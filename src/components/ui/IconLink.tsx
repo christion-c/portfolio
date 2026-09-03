@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaXTwitter, FaRegEnvelope } from 'react-icons/fa6';
 import type { SocialLink } from '../../types/portfolio';
 
+// Maps each social link's icon key to its react-icons component
 const icons: Record<SocialLink['icon'], React.ComponentType<{ className?: string }>> = {
   github: FaGithub,
   linkedin: FaLinkedin,
@@ -12,8 +13,10 @@ interface IconLinkProps {
   link: SocialLink;
 }
 
+// Circular icon button for a single social/contact link (used in Hero and Footer)
 export function IconLink({ link }: IconLinkProps) {
   const Icon = icons[link.icon];
+  // mailto:/tel: links shouldn't get target="_blank" or a "new tab" label — only real http(s) links do
   const isExternal = link.url.startsWith('http');
 
   return (

@@ -4,6 +4,7 @@ import { navItems } from '../../data/nav';
 import { profile } from '../../data/profile';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { Container } from '../ui/Container';
+import { ThemeToggle } from '../ui/ThemeToggle';
 
 // Shared focus-visible ring applied to every nav interactive element for consistent keyboard styling
 const focusRing =
@@ -27,43 +28,50 @@ export function Navbar() {
           {profile.verse}
         </a>
 
-        {/* Desktop nav row, hidden below the sm breakpoint */}
-        <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
-          {navItems.map((item) => {
-            const id = item.href.replace('#', '');
-            const isActive = id === activeId;
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                aria-current={isActive ? 'true' : undefined}
-                className={`relative rounded px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${focusRing} ${
-                  isActive ? 'text-primary' : 'text-text'
-                }`}
-              >
-                {item.label}
-                <span
-                  aria-hidden="true"
-                  className={`absolute inset-x-3 -bottom-0.5 h-0.5 origin-left rounded-full bg-gradient-to-r from-primary to-secondary transition-transform duration-300 ${
-                    isActive ? 'scale-x-100' : 'scale-x-0'
+        {/* Right-hand cluster: desktop nav + theme toggle + hamburger, kept together so
+            justify-between only sees two top-level items (verse on the left, this on the right) */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Desktop nav row, hidden below the sm breakpoint */}
+          <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
+            {navItems.map((item) => {
+              const id = item.href.replace('#', '');
+              const isActive = id === activeId;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? 'true' : undefined}
+                  className={`relative rounded px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${focusRing} ${
+                    isActive ? 'text-primary' : 'text-text'
                   }`}
-                />
-              </a>
-            );
-          })}
-        </nav>
+                >
+                  {item.label}
+                  <span
+                    aria-hidden="true"
+                    className={`absolute inset-x-3 -bottom-0.5 h-0.5 origin-left rounded-full bg-gradient-to-r from-primary to-secondary transition-transform duration-300 ${
+                      isActive ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
+                </a>
+              );
+            })}
+          </nav>
 
-        {/* Hamburger toggle, only visible below the sm breakpoint */}
-        <button
-          type="button"
-          onClick={() => setIsOpen((open) => !open)}
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border text-text-strong transition-colors hover:border-primary hover:text-primary sm:hidden ${focusRing}`}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-        >
-          {isOpen ? <FaXmark className="h-4 w-4" /> : <FaBars className="h-4 w-4" />}
-        </button>
+          {/* Always visible, regardless of breakpoint */}
+          <ThemeToggle />
+
+          {/* Hamburger toggle, only visible below the sm breakpoint */}
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border text-text-strong transition-colors hover:border-primary hover:text-primary sm:hidden ${focusRing}`}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+          >
+            {isOpen ? <FaXmark className="h-4 w-4" /> : <FaBars className="h-4 w-4" />}
+          </button>
+        </div>
       </Container>
 
       {/* Collapsible mobile nav: grid-rows animates the height; aria-hidden + tabIndex=-1 below

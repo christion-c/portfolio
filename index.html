@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Runs before first paint so a saved theme choice applies immediately (no flash of the wrong theme) -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +51,18 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      Static, hidden duplicate of the React contact form (src/components/ui/ContactForm.tsx).
+      Netlify's form-detection bot scans the BUILT HTML at deploy time, not JS-rendered markup,
+      so this is how it discovers the "contact" form and its fields. Field names must stay in
+      sync with the real form. It's never shown or interacted with by visitors.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

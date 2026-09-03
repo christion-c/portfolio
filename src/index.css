@@ -24,9 +24,10 @@
   --shadow-color: 20 14% 20%;
 }
 
-/* Dark-theme overrides for the same tokens; button-from/button-to are NOT redefined here on purpose */
+/* Dark-theme overrides for the same tokens; button-from/button-to are NOT redefined here on purpose.
+   :not([data-theme="light"]) lets an explicit "light" choice (see ThemeToggle) override system dark mode. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --color-bg: #180f09;
     --color-surface: #241609;
     --color-surface-alt: #2f1c0d;
@@ -42,6 +43,24 @@
 
     --shadow-color: 20 60% 3%;
   }
+}
+
+/* Explicit "dark" choice (see ThemeToggle) — applies dark tokens regardless of system preference */
+:root[data-theme='dark'] {
+  --color-bg: #180f09;
+  --color-surface: #241609;
+  --color-surface-alt: #2f1c0d;
+  --color-text: #d9bfa0;
+  --color-text-strong: #fbead4;
+  --color-border: #43290f;
+
+  --color-primary: #fb923c;
+  --color-primary-light: #fdba74;
+  --color-primary-strong: #fb923c;
+  --color-secondary: #fb7185;
+  --color-gold: #fbbf24;
+
+  --shadow-color: 20 60% 3%;
 }
 
 /* Registers the tokens above as real Tailwind utilities (bg-primary, text-text-strong, etc.) */
@@ -96,6 +115,14 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light dark;
+}
+
+/* Explicit theme choices also drive native UI (scrollbars, form controls) via color-scheme */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 /* Respect reduced-motion preference by disabling the smooth-scroll animation */

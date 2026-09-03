@@ -29,7 +29,7 @@ export function Footer() {
           <a
             href="#top"
             aria-label="Back to top"
-            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full border border-border text-text-strong transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:text-primary"
+            className="ml-1 flex h-11 w-11 items-center justify-center rounded-full border border-border text-text-strong transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             <FaArrowUp className="h-4 w-4" />
           </a>

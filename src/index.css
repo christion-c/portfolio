@@ -10,8 +10,15 @@
 
   --color-primary: #c2410c;
   --color-primary-light: #ea580c;
+  --color-primary-strong: #9a3412;
   --color-secondary: #9f1239;
   --color-gold: #b45309;
+
+  /* Fixed (non-theme-swapping) gradient stops for solid buttons/markers that
+     always carry white text — dark mode's brighter primary/secondary would
+     fail contrast against white if used here. */
+  --color-button-from: #c2410c;
+  --color-button-to: #9f1239;
 
   --shadow-color: 20 14% 20%;
 }
@@ -27,6 +34,7 @@
 
     --color-primary: #fb923c;
     --color-primary-light: #fdba74;
+    --color-primary-strong: #fb923c;
     --color-secondary: #fb7185;
     --color-gold: #fbbf24;
 
@@ -43,9 +51,12 @@
   --color-border: var(--color-border);
   --color-primary: var(--color-primary);
   --color-primary-light: var(--color-primary-light);
+  --color-primary-strong: var(--color-primary-strong);
   --color-secondary: var(--color-secondary);
   --color-gold: var(--color-gold);
   --color-accent: var(--color-primary);
+  --color-button-from: var(--color-button-from);
+  --color-button-to: var(--color-button-to);
 
   --font-display: 'Fraunces', ui-serif, Georgia, serif;
   --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -79,6 +90,12 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

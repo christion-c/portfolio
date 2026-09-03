@@ -19,9 +19,9 @@ export function Hero() {
 
       <Container className="relative flex flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         <div className="flex flex-1 flex-col items-start">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary motion-safe:animate-in">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary-strong motion-safe:animate-in">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+              <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
             OPEN TO NEW OPPORTUNITIES
@@ -65,7 +65,7 @@ export function Hero() {
       <a
         href="#about"
         aria-label="Scroll to About section"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-text/60 transition-colors hover:text-primary sm:flex"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 rounded text-text/85 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light focus-visible:ring-offset-2 focus-visible:ring-offset-bg sm:flex"
       >
         <span className="text-[11px] font-medium uppercase tracking-widest">Scroll</span>
         <FaArrowDown className="h-3.5 w-3.5 motion-safe:animate-bounce" />

@@ -5,9 +5,10 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function Projects() {
   return (
-    <section id="projects" className="scroll-mt-20 py-24">
+    <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-20 py-24">
       <Container>
         <SectionHeading
+          headingId="projects-heading"
           index="03"
           eyebrow="Selected Work"
           title="Things I built and kept running"

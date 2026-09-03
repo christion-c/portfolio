@@ -5,9 +5,9 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function Skills() {
   return (
-    <section id="skills" className="scroll-mt-20 bg-surface-alt/40 py-24">
+    <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-20 bg-surface-alt/40 py-24">
       <Container>
-        <SectionHeading index="04" eyebrow="Stack" title="What I work in" />
+        <SectionHeading headingId="skills-heading" index="04" eyebrow="Stack" title="What I work in" />
         <div className="grid gap-5 sm:grid-cols-2">
           {skillGroups.map((group) => (
             <div
@@ -30,7 +30,7 @@ export function Skills() {
                   {group.category}
                 </h3>
               </div>
-              <p className="mb-4 text-xs text-text/70">{group.note}</p>
+              <p className="mb-4 text-xs text-text/80">{group.note}</p>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <Badge key={item}>{item}</Badge>

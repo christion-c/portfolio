@@ -7,9 +7,9 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20 py-24">
+    <section id="about" aria-labelledby="about-heading" className="scroll-mt-20 py-24">
       <Container>
-        <SectionHeading index="01" eyebrow="About" title="How I got here" />
+        <SectionHeading headingId="about-heading" index="01" eyebrow="About" title="How I got here" />
         <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
           <div className="max-w-2xl space-y-8">
             {aboutStory.map((beat) => (
@@ -48,7 +48,7 @@ export function About() {
                   <li key={school.name} className="border-l-2 border-primary/20 pl-3">
                     <p className="text-sm font-semibold text-text-strong">{school.name}</p>
                     <p className="mt-0.5 text-sm text-text">{school.credential}</p>
-                    {school.detail && <p className="mt-1 text-xs text-text/70">{school.detail}</p>}
+                    {school.detail && <p className="mt-1 text-xs text-text/80">{school.detail}</p>}
                   </li>
                 ))}
               </ul>

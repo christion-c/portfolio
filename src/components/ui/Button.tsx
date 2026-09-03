@@ -9,7 +9,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 focus-visible:ring-primary-light',
+    'bg-gradient-to-r from-button-from to-button-to text-white shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 focus-visible:ring-primary-light',
   secondary:
     'border border-border text-text-strong hover:border-primary hover:text-primary hover:-translate-y-0.5 focus-visible:ring-primary-light',
 };

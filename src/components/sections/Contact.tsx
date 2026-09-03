@@ -6,9 +6,10 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function Contact() {
   return (
-    <section id="contact" className="scroll-mt-20 py-24">
+    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 py-24">
       <Container>
         <SectionHeading
+          headingId="contact-heading"
           index="05"
           eyebrow="Contact"
           title="Let's work together"
